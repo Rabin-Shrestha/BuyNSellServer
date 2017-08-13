@@ -2,7 +2,15 @@ package edu.mum.domain;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -24,28 +32,13 @@ public class User {
     private String zipcode;
     private String phoneNo;
     private String photoUrl;
-    private String lastLogIn;
-    private String createdOn;
+    private Date lastLogIn;
+    private Date createdOn;
     private List<UserReview> userReviewList;
     private List<String> userPostIds;
 
-    public User(){}
+    public User(){
 
-    public User(String userName, String password, boolean enabled, String email, String firstName, String lastName, String address, String zipcode, String phoneNo, String photoUrl, String lastLogIn, String createdOn, List<UserReview> userReviewList, List<String> userPostIds) {
-        this.userName = userName;
-        this.password = password;
-        this.enabled = enabled;
-        this.email = email;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.address = address;
-        this.zipcode = zipcode;
-        this.phoneNo = phoneNo;
-        this.photoUrl = photoUrl;
-        this.lastLogIn = lastLogIn;
-        this.createdOn = createdOn;
-        this.userReviewList = userReviewList;
-        this.userPostIds = userPostIds;
     }
 
     @Override
@@ -150,20 +143,28 @@ public class User {
         this.photoUrl = photoUrl;
     }
 
-    public String getLastLogIn() {
+    public Date getLastLogIn() {
         return lastLogIn;
     }
 
-    public void setLastLogIn(String lastLogIn) {
+    public void setLastLogIn(Date lastLogIn)
+    {
         this.lastLogIn = lastLogIn;
     }
 
-    public String getCreatedOn() {
+    public Date getCreatedOn() {
         return createdOn;
     }
 
-    public void setCreatedOn(String createdOn) {
+    public void setCreatedOn(Date createdOn) {
         this.createdOn = createdOn;
+
+        /*DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+        String date= dateFormat .format(createdOn);
+        Date today = Calendar.getInstance().getTime();
+        System.out.println("date:"+date);
+        System.out.println("date:"+this.createdOn);*/
+
     }
 
     public List<UserReview> getUserReviewList() {
@@ -190,5 +191,9 @@ public class User {
         this.userName = userName;
     }
 
-
+    public static void main(String[] args) {
+        User user = new User();
+        //passing current date and time
+        user.setCreatedOn(Calendar.getInstance().getTime());
+    }
 }
