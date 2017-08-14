@@ -10,6 +10,7 @@ import java.util.List;
 /**
  * Created by yentran
  */
+@CrossOrigin(origins = "http://localhost:9090/wishlist")
 @RestController
 @RequestMapping("/catagory")
 public class CatagoryRestController implements IController<Catagory> {
@@ -23,12 +24,19 @@ public class CatagoryRestController implements IController<Catagory> {
         // TODO Auto-generated method stub
         return cRep.save(t);
     }
+    
+    @PostMapping("/addNLoad")
+    public List<Catagory> addNLoad(@RequestBody Catagory t) {
+        // TODO Auto-generated method stub
+    		cRep.save(t);
+        return cRep.findAll();
+    }
 
     @Override
     @PutMapping("/update/{id}")
     public Catagory update(@RequestBody Catagory t, @PathVariable("id") String id) {
         // TODO Auto-generated method stub
-        t.setCata_id(id);
+        t.setId(id);
         return cRep.save(t);
     }
 
