@@ -23,7 +23,7 @@ public class WishListRestController implements IController<WishList> {
         return wlService.add(t);
     }
     
-    @PostMapping("/addAndLoad")
+    @PostMapping("/addNLoad")
     public List<WishList> addNew(@RequestBody WishList t){
     		wlService.add(t);
     		return wlService.getAll();
