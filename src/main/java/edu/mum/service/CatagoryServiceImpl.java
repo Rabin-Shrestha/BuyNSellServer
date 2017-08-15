@@ -2,6 +2,8 @@ package edu.mum.service;
 
 import edu.mum.dao.CatagoryRepository;
 import edu.mum.domain.Catagory;
+import edu.mum.domain.WishList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,7 +37,6 @@ public class CatagoryServiceImpl implements ICatagoryService {
         cRep.delete(t);
         return t;
     }
-
     @Override
     public List<Catagory> getAll() {
         // TODO Auto-generated method stub
@@ -47,5 +48,9 @@ public class CatagoryServiceImpl implements ICatagoryService {
         // TODO Auto-generated method stub
         return cRep.findById(id);
     }
-
+    
+    public List<WishList> getAllWishList(Catagory cata){
+    		return cata.getWishLists();
+    }
+    
 }

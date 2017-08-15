@@ -3,42 +3,29 @@ package edu.mum.domain;
 import org.springframework.data.annotation.Id;
 
 /**
- * Created by yentran
+ * @author yentran
+ *
  */
-//@Document
 public class WishList {
 
     @Id
     private String id;
-    private String desc;
     private String image;
+    private String name;
 
-//	@DBRef
-//	private Catagory catagory;
-
-
-    public WishList() {
-    }
+    public WishList() {}
 
     @Override
     public String toString() {
-        return "WishList {id='" + id + '\'' + ", desc='" + desc + '\''+ ", image='" + image + '\'' + '}';
+        return "WishList {id='" + id + '\'' + ", name='" + name + '\''+ ", image='" + image + '\''  +'}';
     }
 
-    public String getWl_id() {
-        return id;
+    public String getName() {
+        return name;
     }
 
-    public void setWl_id(String wl_id) {
-        this.id = wl_id;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setName(String name) {
+        this.name = name;
     }
 
 	public String getId() {
@@ -56,15 +43,6 @@ public class WishList {
 	public void setImage(String image) {
 		this.image = image;
 	}
-
-    
-//	public Catagory getCatagory() {
-//		return catagory;
-//	}
-//
-//	public void setCatagory(Catagory catagory) {
-//		this.catagory = catagory;
-//	}
 
 
 }
