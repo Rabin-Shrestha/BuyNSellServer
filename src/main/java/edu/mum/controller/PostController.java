@@ -1,5 +1,7 @@
 package edu.mum.controller;
 
+import edu.mum.dao.CommentRepository;
+import edu.mum.domain.Comment;
 import edu.mum.domain.Post;
 import edu.mum.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,12 @@ public class PostController implements IController<Post> {
 
     @Autowired
     private PostService postService;
+    @Autowired
+    private CommentRepository cmRep;
+
+    public Comment getByCommentId(String cmtId){
+        return cmRep.findById(cmtId);
+    }
 
     @Override
     @GetMapping("/")

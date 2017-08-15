@@ -19,7 +19,7 @@ public class CommentController implements IController<Comment> {
     private CommentService commentService;
 
     @Override
-    @PostMapping("/add")
+    @PostMapping("/")
     public Comment add(@RequestBody Comment comment) {
         return commentService.add(comment);
     }
