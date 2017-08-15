@@ -25,7 +25,7 @@ public class CatagoryServiceImpl implements ICatagoryService {
     @Override
     public Catagory update(Catagory t, String id) {
         // TODO Auto-generated method stub
-        t.setCata_id(id);
+        t.setId(id);
         return cRep.save(t);
     }
 

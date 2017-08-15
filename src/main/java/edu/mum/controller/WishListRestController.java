@@ -17,10 +17,16 @@ public class WishListRestController implements IController<WishList> {
     private WishListServiceImpl wlService;
 
     @Override
-    @PostMapping("/")
+    @PostMapping("/add")
     public WishList add(@RequestBody WishList t) {
         // TODO Auto-generated method stub
         return wlService.add(t);
+    }
+    
+    @PostMapping("/addNLoad")
+    public List<WishList> addNew(@RequestBody WishList t){
+    		wlService.add(t);
+    		return wlService.getAll();
     }
 
     @Override
