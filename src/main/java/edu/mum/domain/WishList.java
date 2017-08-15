@@ -3,50 +3,46 @@ package edu.mum.domain;
 import org.springframework.data.annotation.Id;
 
 /**
- * Created by yentran
+ * @author yentran
+ *
  */
-//@Document
 public class WishList {
 
     @Id
     private String id;
-    private String desc;
+    private String image;
+    private String name;
 
-//	@DBRef
-//	private Catagory catagory;
-
-
-    public WishList() {
-    }
+    public WishList() {}
 
     @Override
     public String toString() {
-        return "WishList {id='" + id + '\'' + ", desc='" + desc + '\'' + '}';
+        return "WishList {id='" + id + '\'' + ", name='" + name + '\''+ ", image='" + image + '\''  +'}';
     }
 
-    public String getWl_id() {
-        return id;
+    public String getName() {
+        return name;
     }
 
-    public void setWl_id(String wl_id) {
-        this.id = wl_id;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getDesc() {
-        return desc;
-    }
+	public String getId() {
+		return id;
+	}
 
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }
+	public void setId(String id) {
+		this.id = id;
+	}
 
-//	public Catagory getCatagory() {
-//		return catagory;
-//	}
-//
-//	public void setCatagory(Catagory catagory) {
-//		this.catagory = catagory;
-//	}
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
 
 
 }

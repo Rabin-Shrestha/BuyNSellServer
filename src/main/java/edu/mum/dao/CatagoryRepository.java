@@ -1,6 +1,10 @@
 package edu.mum.dao;
 
 import edu.mum.domain.Catagory;
+import edu.mum.domain.WishList;
+
+import java.util.List;
+
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
@@ -12,4 +16,5 @@ public interface CatagoryRepository extends MongoRepository<Catagory, String> {
     public Catagory findById(String id);
 
     public Long deleteById(String userid);
+    
 }

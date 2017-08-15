@@ -1,6 +1,7 @@
 package edu.mum.service;
 
 import edu.mum.dao.WishListRepository;
+import edu.mum.domain.Catagory;
 import edu.mum.domain.WishList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,7 +25,7 @@ public class WishListServiceImpl implements IWishListService {
     @Override
     public WishList update(WishList t, String id) {
         // TODO Auto-generated method stub
-        t.setWl_id(id);
+        t.setId(id);
         return wlRep.save(t);
     }
 
@@ -42,17 +43,16 @@ public class WishListServiceImpl implements IWishListService {
     }
 
     @Override
-    public WishList get(String name) {
+    public WishList get(String id) {
         // TODO Auto-generated method stub
-        return wlRep.findByDesc(name);
+        return wlRep.findById(id);
     }
 
     @Override
-    public Long deleteByWl_id(String wl_id) {
+    public Long deleteById(String wl_id) {
         // TODO Auto-generated method stub
         return wlRep.deleteById(wl_id);
 
     }
-
-
+    
 }

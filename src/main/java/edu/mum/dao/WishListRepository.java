@@ -1,6 +1,9 @@
 package edu.mum.dao;
 
 import edu.mum.domain.WishList;
+
+import java.util.List;
+
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
@@ -9,7 +12,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 public interface WishListRepository extends MongoRepository<WishList, Long> {
 
     //	public WishList findByCatagory(WishList wl);
-    public WishList findByDesc(String name);
-
+    public WishList findByName(String name);
+    public WishList findById(String id);
     public Long deleteById(String wl_id);
 }

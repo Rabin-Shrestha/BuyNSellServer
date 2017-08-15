@@ -5,6 +5,7 @@ import edu.mum.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -22,11 +23,14 @@ public class UserController implements IController<User> {
     @PostMapping("/")
     public User add(@RequestBody User user) {
         System.out.println("user:" + user);
+        user.setCreatedOn(Calendar.getInstance().getTime());
+        user.setLastLogIn(Calendar.getInstance().getTime());
+
         return userService.add(user);
     }
 
     @Override
-    @PutMapping("/{id}")
+    @PostMapping("/update/{id}")
     public User update(@RequestBody User user, @PathVariable("id") String id) {
         System.out.println("Update request user id:" + id);
         System.out.println("Update request user on ob:" + user.getId());

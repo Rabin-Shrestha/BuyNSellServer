@@ -1,8 +1,10 @@
 package edu.mum.domain;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -10,40 +12,16 @@ import java.util.List;
  */
 @Document
 public class Catagory {
-    List<Product> products;
-    List<WishList> wishLists;
+	
     @Id
     private String id;
     private String name;
+    
+	@DBRef
+    private List<WishList> wishLists;
 
-
-    public Catagory() {
-    }
-
-    public String getCata_id() {
-        return id;
-    }
-
-    public void setCata_id(String cata_id) {
-        this.id = cata_id;
-    }
-
-    public String getCata_name() {
-        return name;
-    }
-
-    public void setCata_name(String cata_name) {
-        this.name = cata_name;
-    }
-
-    public List<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(List<Product> products) {
-        this.products = products;
-    }
-
+    public Catagory() {}
+    
     public List<WishList> getWishLists() {
         return wishLists;
     }
@@ -67,4 +45,11 @@ public class Catagory {
     public void setName(String name) {
         this.name = name;
     }
+
+	@Override
+	public String toString() {
+		return "Catagory {id='" + id + '\'' + ", name='" + name + '\'' + '}';
+	}
+    
+    
 }
