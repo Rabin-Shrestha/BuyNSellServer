@@ -1,6 +1,7 @@
 package edu.mum.domain;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
@@ -23,6 +24,7 @@ public class Post {
     private PriceDetail priceDetail;
     private String itemSpecification;
     private Integer numOfViews;
+    //@DBRef
     private List<Comment> listOfComments;
 
     public Post(){}
