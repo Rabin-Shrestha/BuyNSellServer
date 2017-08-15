@@ -203,8 +203,15 @@ public class User {
     }
 
     public static void main(String[] args) {
-        User user = new User();
-        //passing current date and time
-        user.setCreatedOn(Calendar.getInstance().getTime());
+/*
+        Date createdOn;
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+        Date today = Calendar.getInstance().getTime();
+        String todayStr= dateFormat .format(today);
+        System.out.println("date: "+today);
+        System.out.println("date: str"+todayStr);*/
+        //sample date : 2017-08-15T16:08:22.019-0500
+
+
     }
 }
