@@ -1,5 +1,6 @@
 package edu.mum.domain;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 
 import java.util.Date;

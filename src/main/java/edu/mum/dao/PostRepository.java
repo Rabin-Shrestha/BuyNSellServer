@@ -15,4 +15,5 @@ public interface PostRepository extends MongoRepository<Post, Integer> {
     List<Post> findAllByTitle(String title);
 
     List<Post> findAllByCatagory_Name(String categoryName);
+
 }
