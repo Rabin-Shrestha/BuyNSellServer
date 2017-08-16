@@ -53,4 +53,5 @@ public class CatagoryServiceImpl implements ICatagoryService {
     		return cata.getWishLists();
     }
     
+    
 }

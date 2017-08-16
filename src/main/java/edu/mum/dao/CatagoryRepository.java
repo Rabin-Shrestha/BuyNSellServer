@@ -15,6 +15,6 @@ public interface CatagoryRepository extends MongoRepository<Catagory, String> {
 
     public Catagory findById(String id);
 
-    public Long deleteById(String userid);
+    public String deleteById(String userid);
     
 }

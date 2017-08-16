@@ -49,10 +49,9 @@ public class WishListServiceImpl implements IWishListService {
     }
 
     @Override
-    public Long deleteById(String wl_id) {
+    public void delete(String wl_id) {
         // TODO Auto-generated method stub
-        return wlRep.deleteById(wl_id);
-
+        wlRep.delete(wl_id);
     }
     
 }

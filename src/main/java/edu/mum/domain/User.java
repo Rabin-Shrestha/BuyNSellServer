@@ -37,9 +37,18 @@ public class User {
     private List<UserReview> userReviewList;
     private List<String> userPostIds;
     private List<Catagory> catagoryWishList;
+   // private List<Role> roles;
+    
 
+//    public List<Role> getRoles() {
+//		return roles;
+//	}
+//
+//	public void setRoles(List<Role> roles) {
+//		this.roles = roles;
+//	}
 
-    public List<Catagory> getCatagoryWishList() {
+	public List<Catagory> getCatagoryWishList() {
         return catagoryWishList;
     }
 
