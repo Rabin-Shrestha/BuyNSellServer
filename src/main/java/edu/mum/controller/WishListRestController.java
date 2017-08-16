@@ -64,8 +64,14 @@ public class WishListRestController implements IController<WishList> {
     @DeleteMapping("/delete/{id}")
     public WishList delete(@RequestBody WishList t, @RequestParam String id) {
         // TODO Auto-generated method stub
-        wlService.deleteById(id);
+        wlService.delete(id);
         return t;
+    }
+    
+    @DeleteMapping("/deleteById/{id}")
+    public void deleteById(@PathVariable("id")String id) {
+        // TODO Auto-generated method stub
+        wlService.delete(id);
     }
 
     @Override
