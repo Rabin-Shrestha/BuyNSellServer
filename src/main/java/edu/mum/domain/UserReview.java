@@ -1,5 +1,6 @@
 package edu.mum.domain;
 
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
@@ -9,6 +10,7 @@ public class UserReview {
     private String id;
     private String content;
     private Date reviewedOn;
+    @NotNull
     private String userId;
     private String reviewedBy;
     private Integer rating;

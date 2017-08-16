@@ -2,7 +2,6 @@ package edu.mum.dao;
 
 import edu.mum.domain.Post;
 import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.data.mongodb.repository.Query;
 
 import java.util.List;
 

@@ -5,7 +5,6 @@ import edu.mum.domain.Catagory;
 import edu.mum.domain.WishList;
 import edu.mum.service.CatagoryServiceImpl;
 import edu.mum.service.WishListServiceImpl;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

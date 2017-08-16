@@ -2,15 +2,8 @@ package edu.mum.domain;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.format.annotation.DateTimeFormat;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.Calendar;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.List;
 
@@ -22,10 +15,14 @@ public class User {
 
     @Id
     private String id;
+    @NotNull
     private String userName;
+    @NotNull
     private String password;
     private boolean enabled;
+    @NotNull
     private String email;
+    @NotNull
     private String firstName;
     private String lastName;
     private String address;

@@ -1,7 +1,6 @@
 package edu.mum.service;
 
 import edu.mum.dao.WishListRepository;
-import edu.mum.domain.Catagory;
 import edu.mum.domain.WishList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

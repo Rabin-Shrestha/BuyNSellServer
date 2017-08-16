@@ -1,9 +1,6 @@
 package edu.mum.dao;
 
 import edu.mum.domain.WishList;
-
-import java.util.List;
-
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
