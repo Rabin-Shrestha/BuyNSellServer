@@ -19,6 +19,7 @@ public interface UserService extends IService<User> {
     List<User> findUserByAddressIsLike(String address);
 
     Long deleteById(String userid);
-
+    
+    public User updateRole(User user, String role);
 
 }

@@ -1,10 +1,13 @@
 package edu.mum.service;
 
+import edu.mum.dao.RoleRepository;
 import edu.mum.dao.UserRepository;
+import edu.mum.domain.Role;
 import edu.mum.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,6 +17,9 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;
+    
+    @Autowired
+    private RoleRepository roleRepository;
 
     @Override
     public User add(User u) {
@@ -30,6 +36,17 @@ public class UserServiceImpl implements UserService {
         user.setId(id);
         // needs change here, it always saves new record
         return userRepository.save(user);
+    }
+    
+    public User updateRole(User user, String role) {
+    		List<Role> roles = new ArrayList<Role>();
+    		Role r = new Role();
+    		r.setName(role);
+    		roles.add(r);
+    		user.setRoles(roles);
+    		roleRepository.save(r);
+    		userRepository.save(user);
+    		return user;
     }
 
     @Override

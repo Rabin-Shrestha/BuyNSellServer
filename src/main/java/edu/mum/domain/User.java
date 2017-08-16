@@ -1,6 +1,7 @@
 package edu.mum.domain;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -37,16 +38,18 @@ public class User {
     private List<UserReview> userReviewList;
     private List<String> userPostIds;
     private List<Catagory> catagoryWishList;
-   // private List<Role> roles;
     
+    @DBRef
+    private List<Role> roleList;
+    
+    
+    public List<Role> getRoles() {
+		return roleList;
+	}
 
-//    public List<Role> getRoles() {
-//		return roles;
-//	}
-//
-//	public void setRoles(List<Role> roles) {
-//		this.roles = roles;
-//	}
+	public void setRoles(List<Role> roles) {
+		this.roleList = roles;
+	}
 
 	public List<Catagory> getCatagoryWishList() {
         return catagoryWishList;

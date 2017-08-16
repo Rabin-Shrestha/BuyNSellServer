@@ -25,7 +25,7 @@ public class UserController implements IController<User> {
         System.out.println("user:" + user);
         user.setCreatedOn(Calendar.getInstance().getTime());
         user.setLastLogIn(Calendar.getInstance().getTime());
-
+        
         return userService.add(user);
     }
 
@@ -38,6 +38,11 @@ public class UserController implements IController<User> {
         return userService.update(user, id);
     }
 
+    @PostMapping("/updateRole/{name}")
+    public User updateRole(@RequestBody User user, @PathVariable("name") String name) {
+    	
+    		return userService.updateRole(user, name);
+    }
     @Override
     @DeleteMapping("/delete")
     public User delete(@RequestBody User user, @RequestParam String id) {
@@ -45,6 +50,7 @@ public class UserController implements IController<User> {
         return user;
     }
 
+    
     @Override
     @GetMapping(value = "/" , produces = "application/json")
     public List<User> getAll() {
@@ -87,7 +93,11 @@ public class UserController implements IController<User> {
             return "{\"success\":false}";
     }
 
-
+    @GetMapping("/getByName/{username}")
+    public User getUserByName(@PathVariable("username") String username) {
+    		User user = userService.findByUserName(username);
+    		return user;
+    }
 }
 
 
